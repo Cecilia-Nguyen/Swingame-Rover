@@ -41,6 +41,7 @@
     <Compile Include="Rover.cs" />
     <Compile Include="Battery.cs" />
     <Compile Include="Radar.cs" />
+    <Compile Include="Drill.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

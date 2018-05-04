@@ -8,12 +8,12 @@ namespace Rover
         private double _usesCharge;
         private Battery _battery;
 
-        public Device(bool attached, string name, double usesCharge, Battery battery)
+        public Device(string name, double usesCharge)
         {
-            _attached = attached;
+            _attached = false;
             _name = name;
             _usesCharge = usesCharge;
-            _battery = battery;
+            _battery = null;
         }
 
         public abstract void Use();
