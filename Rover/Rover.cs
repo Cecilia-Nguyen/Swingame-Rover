@@ -10,9 +10,11 @@ namespace Rover
         private List<Specimen> _extracted;
         private List<Battery> _batteries;
         private bool _selected;
+        private Environment _environment;
 
-        public Rover(int x, int y, int size, string name) : base (x, y, size, name)
+        public Rover(int x, int y, int size, string name, Environment env) : base (x, y, size, name)
         {
+            _environment = env;
             _devices = new List<Device>();
             _extracted = new List<Specimen>();
             _batteries = new List<Battery>();
@@ -47,6 +49,7 @@ namespace Rover
                 //Set device Attached = true
                 //Set battery=*Battery*
                 device.Attached = true;
+                device.Rover = this;
                 device.Battery = batteryToAttach;
             }
 
@@ -94,6 +97,11 @@ namespace Rover
         public bool Selected
         {
             get { return _selected; }
+        }
+
+        public Environment Env
+        {
+            get { return _environment; }
         }
     }
 }

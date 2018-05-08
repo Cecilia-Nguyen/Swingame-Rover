@@ -7,6 +7,8 @@ namespace Rover
         private string _name;
         private double _usesCharge;
         private Battery _battery;
+        private Rover _rover;
+        private Environment _environment;
 
         public Device(string name, double usesCharge)
         {
@@ -14,9 +16,19 @@ namespace Rover
             _name = name;
             _usesCharge = usesCharge;
             _battery = null;
+            _environment = _rover.Env;
         }
 
-        public abstract void Use();
+        public virtual void Use()
+        {
+            if (Attached)
+            {
+                if (_battery != null)
+                {
+                    _battery.Discharge(UsesCharge);
+                }
+            }
+        }
 
         public virtual void Update()
         {
@@ -47,6 +59,17 @@ namespace Rover
         {
             get { return _battery; }
             set { _battery = value; }
+        }
+
+        public Rover Rover
+        {
+            get { return _rover; }
+            set { _rover = value; }
+        }
+
+        public Environment Env
+        {
+            get { return _environment; }
         }
     }
 }

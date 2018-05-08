@@ -15,6 +15,32 @@ namespace Rover
             _name = name;
         }
 
+        public bool IsIn(GameObject hostObj, int radius)
+        {
+            if ((this.X < (hostObj.X + radius)) && (this.X > (hostObj.X - radius)))
+            {
+                if((this.Y < (hostObj.Y + radius))&& (this.Y > (hostObj.Y - radius)))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool IsIn(int x1, int y1, int x2, int y2)
+        {
+            if ((this.X < x2) && (this.X > x1))
+            {
+                if ((this.Y < y2) && (this.Y > y1))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public int X
         {
             get { return _x; }

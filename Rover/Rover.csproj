@@ -42,6 +42,12 @@
     <Compile Include="Battery.cs" />
     <Compile Include="Radar.cs" />
     <Compile Include="Drill.cs" />
+    <Compile Include="Motor.cs" />
+    <Compile Include="EDirection.cs" />
+    <Compile Include="Solar.cs" />
+    <Compile Include="NameRadar.cs" />
+    <Compile Include="SizeRadar.cs" />
+    <Compile Include="LocationRadar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
