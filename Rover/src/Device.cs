@@ -37,6 +37,12 @@ namespace Rover
                 _battery.InUse = true;
             }
 
+            if (_battery.Charge <= 0)
+            {
+                _battery = null;
+                Attached = false;
+            }
+
         }
 
         public  bool Attached
