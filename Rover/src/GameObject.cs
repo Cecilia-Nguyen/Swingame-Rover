@@ -6,14 +6,18 @@ namespace Rover
 
         private int _x, _y, _size;
         private string _name;
+		private Environment _environment;
 
-        public GameObject(int x, int y, int size, string name)
+		public GameObject(int x, int y, int size, string name, Environment env)
         {
             _x = x;
             _y = y;
             _size = size;
-            _name = name;
+			_name = name;
+			_environment = env;
         }
+
+		public abstract void Draw ();
 
         public bool IsIn(GameObject hostObj, int radius)
         {
@@ -53,6 +57,15 @@ namespace Rover
             set { _y = value; }
         }
 
+        public int DrawX
+		{
+			get { return _x*Env.Width/20 + Env.Offset; }
+		}
+
+		public int DrawY {
+			get { return _y*Env.Width/20 + Env.Offset; }
+        }
+
         public int Size
         {
             get { return _size; }
@@ -61,6 +74,11 @@ namespace Rover
         public string Name
         {
             get { return _name; }
+        }
+
+		public Environment Env 
+		{
+            get { return _environment; }
         }
     }
 }

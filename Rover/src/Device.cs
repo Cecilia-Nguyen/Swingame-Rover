@@ -10,8 +10,9 @@ namespace Rover
         private Rover _rover;
         private Environment _environment;
 
-        public Device(string name, double usesCharge)
+		public Device(string name, double usesCharge, Rover rover)
         {
+			_rover = rover;
             _attached = false;
             _name = name;
             _usesCharge = usesCharge;
@@ -37,7 +38,7 @@ namespace Rover
                 _battery.InUse = true;
             }
 
-            if (_battery.Charge <= 0)
+            if (_battery == null || _battery.Charge <= 0)
             {
                 _battery = null;
                 Attached = false;

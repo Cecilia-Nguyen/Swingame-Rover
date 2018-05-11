@@ -7,7 +7,7 @@ namespace Rover
         private double _wear;
         private const double USES_CHARGE = 0;
 
-        public Drill(string name) : base(name, USES_CHARGE)
+		public Drill(string name, Rover rover) : base(name, USES_CHARGE, rover)
         {
             _wear = 1; //Wear counting down from 1 to 0;
         }

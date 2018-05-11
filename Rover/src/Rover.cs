@@ -11,23 +11,48 @@ namespace Rover
         private List<Specimen> _extracted;
         private List<Battery> _batteries;
         private bool _selected;
-        private Environment _environment;
 
-        public Rover(int x, int y, int size, string name, Environment env) : base (x, y, size, name)
+        public Rover(int x, int y, int size, string name, Environment env) : base (x, y, size, name, env)
         {
-            _environment = env;
             _devices = new List<Device>();
             _extracted = new List<Specimen>();
             _batteries = new List<Battery>();
             _batteries.Add(new Battery("Battery 1"));
             _batteries.Add(new Battery("Battery 2"));
 
+			Drill drill = new Drill ("Drill", this);
+			Motor downMotor = new Motor ("Downward Motor", EDirection.Down, this);
+			Motor upMotor = new Motor ("Upward Motor", EDirection.Up, this);
+			Motor leftMotor = new Motor ("Leftward Motor", EDirection.Left, this);
+			Motor rightMotor = new Motor ("Rightward Motor", EDirection.Right, this);
+			LocationRadar locationRadar = new LocationRadar ("Location Radar", env, this);
+			SizeRadar sizeRadar = new SizeRadar ("Size Radar", env, this);
+			NameRadar nameRader = new NameRadar ("Name Radar", env, this);
+			Solar solar = new Solar ("Solar Panel", this);
+
+			_devices.Add (drill);
+			_devices.Add (downMotor);
+			_devices.Add (upMotor);
+			_devices.Add (leftMotor);
+			_devices.Add (rightMotor);
+			_devices.Add (locationRadar);
+			_devices.Add (sizeRadar);
+			_devices.Add (nameRader);
+			_devices.Add (solar);
+
+
             _selected = false;
+            
         }
 
-        public void Draw()
+        public override void Draw()
         {
+			SwinGame.FillRectangle (Color.Red, DrawX-Size/2, DrawY-Size/2, Size, Size);
 
+			if(Selected)
+			{
+				SwinGame.DrawRectangle (Color.Black, DrawX - (Size / 2 + 1), DrawY - (Size / 2 + 1), Size + 2, Size + 2);
+			}
         }
 
         public void Update()
@@ -36,6 +61,7 @@ namespace Rover
             {
                 d.Update();
             }
+			_selected = false;
         }
 
         public void Use(Device device)
@@ -101,11 +127,7 @@ namespace Rover
         public bool Selected
         {
             get { return _selected; }
-        }
-
-        public Environment Env
-        {
-            get { return _environment; }
+			set { _selected = value; }
         }
     }
 }

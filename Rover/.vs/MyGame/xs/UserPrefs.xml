@@ -1,6 +1,24 @@
 ﻿<Properties StartupConfiguration="{871B5A90-103A-46A5-BBB9-07C02B9851D1}|Default">
   <MonoDevelop.Ide.ItemProperties.MyGame PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Rover.cs">
+    <Files>
+      <File FileName="src/Program.cs" Line="26" Column="17" />
+      <File FileName="src/Environment.cs" Line="1" Column="1" />
+      <File FileName="src/Battery.cs" Line="1" Column="1" />
+      <File FileName="src/Device.cs" Line="1" Column="1" />
+      <File FileName="src/Drill.cs" Line="1" Column="1" />
+      <File FileName="src/EDirection.cs" Line="1" Column="1" />
+      <File FileName="src/GameObject.cs" Line="1" Column="1" />
+      <File FileName="src/LocationRadar.cs" Line="1" Column="1" />
+      <File FileName="src/Motor.cs" Line="1" Column="1" />
+      <File FileName="src/NameRadar.cs" Line="1" Column="1" />
+      <File FileName="src/Radar.cs" Line="1" Column="1" />
+      <File FileName="src/Rover.cs" Line="1" Column="1" />
+      <File FileName="src/SizeRadar.cs" Line="1" Column="1" />
+      <File FileName="src/Solar.cs" Line="1" Column="1" />
+      <File FileName="src/Specimen.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -3,7 +3,7 @@ namespace Rover
 {
     public class SizeRadar : Radar
     {
-        public SizeRadar(string name, Environment env) : base(name, env)
+        public SizeRadar(string name, Environment env, Rover rover) : base(name, env, rover)
         {
         }
 
