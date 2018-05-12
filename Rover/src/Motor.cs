@@ -3,8 +3,8 @@ namespace Rover
 {
     public class Motor : Device
     {
-
-        private const double USES_CHARGE = .1;
+        
+        private const int USES_CHARGE = 1;
         private EDirection _dir; 
 
 		public Motor(string name, EDirection direction, Rover rover) : base(name, USES_CHARGE, rover)

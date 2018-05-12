@@ -1,30 +1,3 @@
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/animations/startup.txt
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/bundles/FileDialog.txt
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/bundles/splash.txt
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/fonts/arial.ttf
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/fonts/cour.ttf
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/fonts/maven_pro_regular.ttf
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/fdFile.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/fdFolder.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/FileDialog_Active.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/FileDialog_Background.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/FileDialog_Inactive.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/FileDialog_Scroll.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/FileDialog_ScrollSmall.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/Swinburne.jpg
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/images/SwinGameAni.png
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/panels/FileDialog.txt
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/sounds/error.wav
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/sounds/SwinGameStart.wav
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/SwinGame.icns
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/Resources/SwinGame.ico
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/MyGame.exe
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/MyGame.pdb
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/SwinGame.dll
-/Users/Jai/Downloads/ProjectTemplate/bin/Debug/SwinGame.dll.mdb
-/Users/Jai/Downloads/ProjectTemplate/obj/x86/Debug-Mac/MyGame.csproj.CoreCompileInputs.cache
-/Users/Jai/Downloads/ProjectTemplate/obj/x86/Debug-Mac/MyGame.exe
-/Users/Jai/Downloads/ProjectTemplate/obj/x86/Debug-Mac/MyGame.pdb
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/Resources/animations/startup.txt
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/Resources/bundles/FileDialog.txt
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/Resources/bundles/splash.txt
@@ -46,10 +19,7 @@
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/Resources/SwinGame.icns
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/Resources/SwinGame.ico
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/MyGame.exe
-/Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/MyGame.pdb
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/SwinGame.dll
 /Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/bin/Debug/SwinGame.dll.mdb
-/Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/obj/x86/Debug-Mac/MyGame.csproj.CoreCompileInputs.cache
-/Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/obj/x86/Debug-Mac/MyGame.exe
-/Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/obj/x86/Debug-Mac/MyGame.pdb
-/Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/obj/x86/Debug-Mac/MyGame.csprojResolveAssemblyReference.cache
+/Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/obj/x86/Debug-Windows/MyGame.csproj.CoreCompileInputs.cache
+/Users/Jai/Desktop/OneDrive - Swinburne University/Programming/2.1/OOP/7/7.1P/Rover/Rover/obj/x86/Debug-Windows/MyGame.exe

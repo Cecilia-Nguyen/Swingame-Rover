@@ -3,9 +3,9 @@ namespace Rover
 {
     public class Drill : Device
     {
-
+        
         private double _wear;
-        private const double USES_CHARGE = 0;
+        private const int USES_CHARGE = 0;
 
 		public Drill(string name, Rover rover) : base(name, USES_CHARGE, rover)
         {
@@ -44,7 +44,7 @@ namespace Rover
 		public bool IsSuccessfulUse()
         {
             Random rnd = new Random();
-            if ( Usable || rnd.NextDouble() < .8)
+			if ( Usable || rnd.NextDouble() < .8)
             {
                 return true;
             }

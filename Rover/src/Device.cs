@@ -5,12 +5,13 @@ namespace Rover
     {
         private bool _attached;
         private string _name;
-        private double _usesCharge;
+        private int _usesCharge;
         private Battery _battery;
         private Rover _rover;
         private Environment _environment;
+		private bool _selected;
 
-		public Device(string name, double usesCharge, Rover rover)
+		public Device(string name, int usesCharge, Rover rover)
         {
 			_rover = rover;
             _attached = false;
@@ -18,13 +19,14 @@ namespace Rover
             _usesCharge = usesCharge;
             _battery = null;
             _environment = _rover.Env;
+			_selected = false;
         }
 
         public virtual void Use()
         {
             if (Attached)
             {
-                if (_battery != null)
+				if (_battery != null && Battery.Charge > 0)
                 {
                     _battery.Discharge(UsesCharge);
                 }
@@ -57,7 +59,7 @@ namespace Rover
             get { return _name; }
         }
 
-        public double UsesCharge
+        public int UsesCharge
         {
             get { return _usesCharge; }
         }
@@ -78,5 +80,11 @@ namespace Rover
         {
             get { return _environment; }
         }
+
+        public bool Selected
+		{
+			get { return _selected; }
+			set { _selected = value; }
+		}
     }
 }

@@ -6,30 +6,35 @@ namespace Rover
 
         private bool _inUse;
         private string _name;
-        private double _charge;
+        private int _charge;
 
         public Battery(string name)
         {
             _name = name;
-            _charge = 1;
+            _charge = 10;
             _inUse = false;
         }
 
-        public void Discharge(double amount)
+        public void Discharge(int amount)
         {
-            _charge += amount;
+            _charge -= amount;
             if (_charge <= 0 )
             {
                 _charge = 0;
             }
-        }
+
+            if(_charge >= 10)
+			{
+				_charge = 10;
+			}
+		}
 
         public string Name
         {
             get { return _name; }
         }
 
-        public double Charge
+        public int Charge
         {
             get { return _charge; }
             set { _charge = value; }

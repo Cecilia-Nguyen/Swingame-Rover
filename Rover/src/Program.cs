@@ -31,10 +31,66 @@ namespace Rover
 					SwinGame.DrawLine (Color.Grey, 0, i * lineInterval, theEnvironment.Width - 1, i * lineInterval); //Horizontal
 				}
 
-				//User Input
+				//User Input 
 				if (SwinGame.KeyTyped (KeyCode.vk_TAB)) { theEnvironment.SelectNextRover(); }
+				if (SwinGame.KeyTyped (KeyCode.vk_a)) { theEnvironment.SelectedRover.Attach (theEnvironment.SelectedDevice); }
+				if (SwinGame.KeyTyped (KeyCode.vk_d)) { theEnvironment.SelectedRover.Remove (theEnvironment.SelectedDevice); }
+				if (SwinGame.KeyTyped (KeyCode.vk_SPACE)) 
+				{
+					if(theEnvironment.SelectedDevice.Attached)
+					{
+						theEnvironment.SelectedRover.Use (theEnvironment.SelectedDevice);
+					}else 
+					{
+						Console.WriteLine (theEnvironment.SelectedDevice.Name + " is not attached");
+					}
 
-                theEnvironment.Update ();
+				}
+
+                //Handle Numbers
+				//TODO - Make numbers more compact
+				if (SwinGame.KeyTyped (KeyCode.vk_1)) 
+				{ 
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[0]); 
+				}
+				if (SwinGame.KeyTyped (KeyCode.vk_2)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[1]); 
+                }
+				if (SwinGame.KeyTyped (KeyCode.vk_3)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[2]); 
+                }
+				if (SwinGame.KeyTyped (KeyCode.vk_4)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[3]); 
+                }
+				if (SwinGame.KeyTyped (KeyCode.vk_5)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[4]); 
+                }
+				if (SwinGame.KeyTyped (KeyCode.vk_6)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[5]); 
+                }
+				if (SwinGame.KeyTyped (KeyCode.vk_7)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[6]); 
+                }
+				if (SwinGame.KeyTyped (KeyCode.vk_8)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[7]); 
+                }
+				if (SwinGame.KeyTyped (KeyCode.vk_9)) 
+				{
+					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[8]); 
+                }
+
+                
+
+
+
+				theEnvironment.Update ();
 
                 
                 //Draw onto the screen

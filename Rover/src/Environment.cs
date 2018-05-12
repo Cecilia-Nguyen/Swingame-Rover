@@ -11,6 +11,7 @@ namespace Rover
         private List<Specimen> _specimens;
         private int _width, _height;
 		private Rover _selectedRover;
+		private Device _selectedDevice;
 
 		private int _offset; 
 
@@ -45,6 +46,48 @@ namespace Rover
 			{
 				s.Draw ();
 			}
+
+			DrawSideBar ();
+		}
+
+        public void DrawSideBar()
+		{
+			SwinGame.DrawText (SelectedRover.Name, Color.Black, "Arial.ttf", 40, 25 + Width, 50);
+			SwinGame.DrawText ("Devices", Color.Black, "Arial.ttf", 35, 25 + Width, 100);
+            
+			int i = 0;
+			foreach (Device d in _selectedRover.Devices)
+			{
+				i++;
+
+				if (d.Attached && d.Selected) 
+				{
+					SwinGame.DrawText (String.Format ("({0}): {1} ({2})", i, d.Name, d.Battery.Name), Color.Blue, "Arial.ttf", 20, 25 + Width, 125 + i * 25);
+				} else if (d.Attached)
+				{
+					SwinGame.DrawText (String.Format ("({0}): {1} ({2})", i, d.Name, d.Battery.Name), Color.Green, "Arial.ttf", 20, 25 + Width, 125 + i * 25);
+				}
+				else if (!d.Attached & d.Selected)
+				{
+					SwinGame.DrawText (String.Format ("({0}): {1}", i, d.Name), Color.Blue, "Arial.ttf", 20, 25 + Width, 125 + i * 25);
+				} else
+				{
+					SwinGame.DrawText (String.Format ("({0}): {1}", i, d.Name), Color.Red, "Arial.ttf", 20, 25 + Width, 125 + i * 25);
+				}
+			}
+
+			SwinGame.DrawText ("Batteries", Color.Black, "Arial.ttf", 35, 25 + Width, 400);
+
+			i = 0;
+			foreach (Battery b in _selectedRover.Batteries) 
+			{
+				i++;
+
+				SwinGame.DrawText (b.Name, Color.Black, "Arial.ttf", 10,25 +Width + i * 50, 550);
+				SwinGame.DrawRectangle (Color.Black, 25 + Width + i *50, 449, 25, 101);
+				SwinGame.FillRectangle (Color.Green, 25 + Width + i * 50 + 1, 450 + (100-b.Charge*10), 23, b.Charge * 10 -1);
+			}
+
 		}
 
         //TODO - Make the parameter matter 
@@ -103,7 +146,19 @@ namespace Rover
 			}
 
 			_selectedRover = _rovers [index];
-			Console.WriteLine (_selectedRover.Name + " Selected");
+			Console.WriteLine ("\n"+ _selectedRover.Name + " Selected");
+		}
+
+		public void SelectDevice(Device device)
+		{
+			foreach(Device d in device.Rover.Devices)
+			{
+				d.Selected = false;
+			}
+			device.Selected = true;
+			_selectedDevice = device;
+			Console.WriteLine (device.Name + " Selected");
+
 		}
 
         public List<Rover> Rovers
@@ -132,5 +187,14 @@ namespace Rover
 		{
 			get { return _offset; }
 		}
+
+		public Rover SelectedRover 
+		{
+			get { return _selectedRover; }
+		}
+
+		public Device SelectedDevice {
+			get { return _selectedDevice; }
+        }
     }
 }

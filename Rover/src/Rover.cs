@@ -71,42 +71,57 @@ namespace Rover
 
         public void Attach(Device device)
         {
+			if (device.Attached) 
+			{
+				Console.WriteLine (device.Name + " already attached");
+				return; 
+			}
             //Check which battery has highest charge
-            Battery batteryToAttach = CalculateHighestCharge();
+			Battery batteryToAttach = DetermineBattery(device);
             //Check if battery is in use
-            if(!batteryToAttach.InUse)
-            {
-                //Set device Attached = true
-                //Set battery=*Battery*
-                device.Attached = true;
-                device.Rover = this;
-                device.Battery = batteryToAttach;
-            }
+            
+			if (batteryToAttach != null) {
+				device.Attached = true;
+				device.Rover = this;
+				device.Battery = batteryToAttach;
+				batteryToAttach.InUse = true;
+				Console.WriteLine (device.Name + " Attached");
+			}else 
+			{
+				Console.WriteLine ("All available batteries in use - Remove a device to free a battery"); 
+			}
 
-        }
 
-        public void Remove(Device device)
+
+		}
+
+		public void Remove(Device device)
         {
             device.Attached = false;
-            device.Battery.InUse = false;
+			if(device.Battery != null)
+			{
+				device.Battery.InUse = false;
+                device.Battery = null;
+			}
+
+
         }
 
-        public Battery CalculateHighestCharge()
+        public Battery DetermineBattery(Device device)
         {
+			if(Batteries[0].InUse)
+			{
+				foreach(Battery b in Batteries)
+				{
+					if(!b.InUse)
+					{
+						return b;
+					}
+				}
+				return null;
+			}
+			return Batteries [0];
 
-            int index = 0;
-            double max = 0;
-
-            for (int i = 0; i < _batteries.Count; i++)
-            {
-                if (_batteries[i].Charge > max)
-                {
-                    max = _batteries[i].Charge;
-                    index = i;
-                }
-            }
-
-            return _batteries[index];
         }
 
         public List<Device> Devices
