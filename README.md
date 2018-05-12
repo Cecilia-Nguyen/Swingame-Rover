@@ -1,6 +1,15 @@
 # Swingame-Rover
 ## C# Swingame Rover Game
 
+### Controls
+
+- *TAB:* Selects next rover, Selected rover indicated by red outline
+- *Number:* Selects corresponding device, Selected device indicated by blue text
+- *a:* Attaches selected device to best available battery
+- *d:* Dettaches selected device from its battery
+- *Space:* Uses selected device
+
+
 ### How to open
 I'm using a MacOS build of Swingame (downloadable from [The Swingame Website](http://www.swingame.com/ "Swingame's Homepage")) to implement the gui, I'm fairly certain for Linux/Windows you'd have to create your own project file with a compatable Swingame Install.
 
