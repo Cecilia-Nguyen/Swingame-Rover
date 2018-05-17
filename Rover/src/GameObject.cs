@@ -21,9 +21,9 @@ namespace Rover
 
         public bool IsIn(GameObject hostObj, int radius)
         {
-            if ((this.X < (hostObj.X + radius)) && (this.X > (hostObj.X - radius)))
+			if ((this.X < (hostObj.X + radius)) && (this.X > (hostObj.X - radius)))
             {
-                if((this.Y < (hostObj.Y + radius))&& (this.Y > (hostObj.Y - radius)))
+				if((this.Y < (hostObj.Y + radius))&& (this.Y > (hostObj.Y - radius)))
                 {
                     return true;
                 }

@@ -18,8 +18,12 @@ namespace Rover
 
 		public override void Draw ()
 		{
-			if (_isVisable) {
+			if (_isActive && _isVisable) 
+			{
 				SwinGame.DrawCircle (Color.Green, DrawX, DrawY, Size);
+			} else if (!_isActive)
+			{
+				_isVisable = false;
 			}
 		}
 

@@ -52,6 +52,7 @@ namespace Rover
 
         public void DrawSideBar()
 		{
+			//                      Text               Color       Font       Size     x     y
 			SwinGame.DrawText (SelectedRover.Name, Color.Black, "Arial.ttf", 40, 25 + Width, 50);
 			SwinGame.DrawText ("Devices", Color.Black, "Arial.ttf", 35, 25 + Width, 100);
             
@@ -87,6 +88,11 @@ namespace Rover
 				SwinGame.DrawRectangle (Color.Black, 25 + Width + i *50, 449, 25, 101);
 				SwinGame.FillRectangle (Color.Green, 25 + Width + i * 50 + 1, 450 + (100-b.Charge*10), 23, b.Charge * 10 -1);
 			}
+
+			//Draw Specimen Count
+			SwinGame.DrawText ("Specimens", Color.Black, "Arial.ttf", 35, 25 + Width, 600);
+			SwinGame.DrawText (String.Format ("Specimens Extracted: " + _selectedRover.Extracted.Count), Color.Black, "Arial.ttf", 20, 25 + Width, 650);
+			SwinGame.DrawText (String.Format ("Specimens Remaining: " + CountSpecimensRemaining()), Color.Black, "Arial.ttf", 20, 25 + Width, 675);
 
 		}
 
@@ -135,6 +141,17 @@ namespace Rover
             }
 			Console.WriteLine ("");
         }
+        
+        public int CountSpecimensRemaining()
+		{
+			int count = _specimens.Count;
+			foreach (Rover r in _rovers)
+			{
+				count -= r.Extracted.Count;
+			}
+
+			return count;
+		}
 
         public void SelectNextRover()
 		{

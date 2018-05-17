@@ -13,23 +13,30 @@ namespace Rover
         }
 
         public override void Use()
-        {
+        {         
             if (Attached)
             {
+				Console.WriteLine (Name + " used: ");
+				int count = 0;
                 foreach(Specimen s in Env.Specimens)
-                {
-                    if (s.IsIn(Rover, Rover.Size/2)) //if the specimen is inside the range of the rover
+				{
+					if (s.IsIn(Rover, Rover.Size/2) && s.IsActive) //if the specimen is inside the range of the rover
                     {
-                        if(IsSuccessfulUse())
-                        {
-                            Rover.Extracted.Add(s);
-                            base.Use();
-                            return;
-                        }
-
-                    }
+						count++;
+						if (IsSuccessfulUse ()) {
+							Rover.Extracted.Add (s);
+							Console.WriteLine ("\t" + s.Name + " extracted");
+							s.IsActive = false;
+							return;
+						} else 
+						{
+							Console.WriteLine ("\tUnsuccessful use");
+						}
+					}
                 }
+				if (count == 0){ Console.WriteLine ("\t No specimen to drill"); }
             }
+			base.Use ();
         }
 
 		public override void Update()
@@ -46,6 +53,7 @@ namespace Rover
             Random rnd = new Random();
 			if ( Usable || rnd.NextDouble() < .8)
             {
+				_wear -= .05;
                 return true;
             }
             return false;

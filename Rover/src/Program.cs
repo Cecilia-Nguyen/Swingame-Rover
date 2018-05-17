@@ -15,6 +15,8 @@ namespace Rover
 			int lineInterval = gameHeight / 20;
 
             SwinGame.OpenGraphicsWindow ("Rover", gameWidth, gameHeight);
+            
+            
 
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
@@ -31,10 +33,20 @@ namespace Rover
 					SwinGame.DrawLine (Color.Grey, 0, i * lineInterval, theEnvironment.Width - 1, i * lineInterval); //Horizontal
 				}
 
-				//User Input 
+                //
+				//User Input
+                //
+                
+                //Select Next Rover
 				if (SwinGame.KeyTyped (KeyCode.vk_TAB)) { theEnvironment.SelectNextRover(); }
+
+                //Attach Selected Device
 				if (SwinGame.KeyTyped (KeyCode.vk_a)) { theEnvironment.SelectedRover.Attach (theEnvironment.SelectedDevice); }
+
+                //Remove Selected Device
 				if (SwinGame.KeyTyped (KeyCode.vk_d)) { theEnvironment.SelectedRover.Remove (theEnvironment.SelectedDevice); }
+
+                //Use Selected Device
 				if (SwinGame.KeyTyped (KeyCode.vk_SPACE)) 
 				{
 					if(theEnvironment.SelectedDevice.Attached)
@@ -46,6 +58,20 @@ namespace Rover
 					}
 
 				}
+
+                //See full rover status
+				if(SwinGame.KeyTyped(KeyCode.vk_r))
+				{
+					Rover rover = theEnvironment.SelectedRover;
+					Console.WriteLine ("\n" + rover.Name + " Status:");
+
+					Console.WriteLine (String.Format ("\tPosition: {0},{1}", rover.X, rover.Y));
+					Console.WriteLine ("\t" + rover.ListAttachedDevices());
+					Console.WriteLine ("\t" + rover.ListExtractedSpecimens ());
+
+				}
+
+
 
                 //Handle Numbers
 				//TODO - Make numbers more compact

@@ -89,23 +89,60 @@ namespace Rover
 			}else 
 			{
 				Console.WriteLine ("All available batteries in use - Remove a device to free a battery"); 
-			}
-
-
-
+			}         
 		}
 
-		public void Remove(Device device)
-        {
-            device.Attached = false;
-			if(device.Battery != null)
+		public void Remove (Device device)
+		{
+			device.Attached = false;
+			if (device.Battery != null) 
 			{
 				device.Battery.InUse = false;
-                device.Battery = null;
+				device.Battery = null;
 			}
+		}
 
+        public string ListAttachedDevices()
+		{
+			string text = "";
+			text += "Attached Devices: ";
+			int count = 0;
+			foreach (Device d in _devices) 
+			{
+				if (d.Attached) {
+					count++;
+					text += ("\n\t\t" + d.Name);
 
-        }
+                    //Print the wear only if an attached device is a drill
+					if (d is Drill){
+						text += (" (" + ((Drill)d).Wear*100 + "%)");
+					}
+				}
+            }
+            if (count ==0)
+			{
+				text =  "Attached Devices: \n\t\tNo Attached Devices";
+            } else {
+				
+            }
+
+			return text;
+		}
+
+        public string ListExtractedSpecimens()
+		{
+			string text = "";
+			text += ("Extracted Specimens: ");
+            if (_extracted.Count == 0) {
+
+                text += ("\n\t\tNo Extracted Specimens");
+            } else {
+                foreach (Specimen s in _extracted) {
+                    text += ("\n\t\t" + s.Name);
+                }
+            }
+			return text;
+		}
 
         public Battery DetermineBattery(Device device)
         {
