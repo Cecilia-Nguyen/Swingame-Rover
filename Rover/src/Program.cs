@@ -70,9 +70,7 @@ namespace Rover
 					Console.WriteLine ("\t" + rover.ListExtractedSpecimens ());
 
 				}
-
-
-
+            
                 //Handle Numbers
 				//TODO - Make numbers more compact
 				if (SwinGame.KeyTyped (KeyCode.vk_1)) 
@@ -111,11 +109,7 @@ namespace Rover
 				{
 					theEnvironment.SelectDevice(theEnvironment.SelectedRover.Devices[8]); 
                 }
-
-                
-
-
-
+                            
 				theEnvironment.Update ();
 
                 

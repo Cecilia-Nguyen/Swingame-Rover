@@ -8,7 +8,6 @@ namespace Rover
         private int _usesCharge;
         private Battery _battery;
         private Rover _rover;
-        private Environment _environment;
 		private bool _selected;
 
 		public Device(string name, int usesCharge, Rover rover)
@@ -18,7 +17,6 @@ namespace Rover
             _name = name;
             _usesCharge = usesCharge;
             _battery = null;
-            _environment = _rover.Env;
 			_selected = false;
         }
 
@@ -78,7 +76,7 @@ namespace Rover
 
         public Environment Env
         {
-            get { return _environment; }
+			get { return Rover.Env; }
         }
 
         public bool Selected
