@@ -21,7 +21,7 @@ I'm using the most recent (as of 10th May 2018) MacOS build of Swingame (downloa
 
 
 
-####*Initial UML Class Diagram*
+#### *Initial UML Class Diagram*
 
 Initially my first class diagram looked like this
 
