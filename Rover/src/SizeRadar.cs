@@ -11,7 +11,7 @@ namespace Rover
 		{
             if (Attached)
             {
-				Console.WriteLine (Name + " used: ");
+                Console.WriteLine ("Specimens found: ");
                 foreach (Specimen s in Env.Specimens)
                 {
                     if (s.IsIn(Rover, RADAR_RANGE))

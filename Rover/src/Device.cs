@@ -26,6 +26,7 @@ namespace Rover
             {
 				if (_battery != null && Battery.Charge > 0)
                 {
+                    Console.WriteLine (this.Name + ": Successful Use");
                     _battery.Discharge(UsesCharge);
                 }
             }

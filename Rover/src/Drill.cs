@@ -16,11 +16,10 @@ namespace Rover
         {         
             if (Attached)
             {
-				Console.WriteLine (Name + " used: ");
 				int count = 0;
                 foreach(Specimen s in Env.Specimens)
 				{
-					if (s.IsIn(Rover, Rover.Size/2) && s.IsActive) //if the specimen is inside the range of the rover
+					if (s.IsIn(Rover, 1) && s.IsActive) //if the specimen is inside the range of the rover
                     {
 						count++;
 						if (IsSuccessfulUse ()) {

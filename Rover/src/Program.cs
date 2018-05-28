@@ -7,8 +7,8 @@ namespace Rover
     {
         public static void Main()
         {
-            //Open the game window 
-            Environment theEnvironment = new Environment(800,800,1,10);
+            //Open the game window              Width, Height, Rovers, Specimens
+            Environment theEnvironment = new Environment(800,800,2,10);
 
             int gameWidth = theEnvironment.Width + 400;
             int gameHeight = theEnvironment.Height;
@@ -66,6 +66,10 @@ namespace Rover
 					Console.WriteLine ("\n" + rover.Name + " Status:");
 
 					Console.WriteLine (String.Format ("\tPosition: {0},{1}", rover.X, rover.Y));
+                    foreach(Battery b in rover.Batteries)
+                    {
+                        Console.WriteLine ("\t" + b.Name + ": " + b.Charge*10 + "%");
+                    }
 					Console.WriteLine ("\t" + rover.ListAttachedDevices());
 					Console.WriteLine ("\t" + rover.ListExtractedSpecimens ());
 

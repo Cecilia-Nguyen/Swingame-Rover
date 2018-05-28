@@ -11,12 +11,12 @@ namespace Rover
 		{
             if (Attached)
             {
-				Console.WriteLine (Name + " used: ");
+                Console.WriteLine ("Speciments found: ");
                 foreach (Specimen s in Env.Specimens)
                 {
                     if (s.IsIn(Rover, RADAR_RANGE))
                     {
-						Console.WriteLine("\tSpecimen Name: " + s.Name); //TODO Make Display to screen
+						Console.WriteLine("\tSpecimen Name: " + s.Name);
                     }
                 }
                 base.Use();

@@ -99,15 +99,22 @@ namespace Rover
         //TODO - Make the parameter matter 
         public void AddRovers(int amount)
         {
+            //Limits
 			if (amount < 1) { amount = 1; }
+            if (amount > 20) { amount = 20; }
 
             _rovers = new List<Rover>();
 
-			Rover rover1 = new Rover (1, 1, 30, "Rover 1", this);
-			Rover rover2 = new Rover (18, 18, 30, "Rover 2", this);
+            Random rnd = new Random ();
+            int randX = 0;
+            int randY = 0;
 
-			_rovers.Add (rover1);
-			_rovers.Add (rover2);
+            for (int i = 0; i < amount; i++)
+            {
+                randX = rnd.Next (20);
+                randY = rnd.Next (20);
+                _rovers.Add (new Rover (randX, randY, 30, "Rover " + (i + 1), this));
+            }
 
             foreach( Rover r in _rovers)
 			{
