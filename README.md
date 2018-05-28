@@ -221,7 +221,11 @@ Instead of continuing this and marking this copy of the UML I decided to keep a 
 
 You can see the full list of changes in the 'Documentation' folder of this repo.
 
+<<<<<<< HEAD
 ##### Current Design
+=======
+#### *Initial UML Class Diagram*
+>>>>>>> 5351fe0b4cef55910f2517ac574ddc7398d4815e
 
 As I previously mentioned I worked backwards after the initial design, I made changes then annotated them in my list of what would need to be changed to the UML Diagram in order to keep it current.
 
@@ -229,4 +233,8 @@ Due to the addition of SwinGame as a UI there were a lot of things to like, a lo
 
 Below is the current UML Diagram:
 
+<<<<<<< HEAD
 ![CurrentUML](Documentation/CurrentUML.jpg?raw=true "Current UML")
+=======
+Currently am working on an updated version as of course I didn't get it perfect the first time and had to update it as I progressed.
+>>>>>>> 5351fe0b4cef55910f2517ac574ddc7398d4815e
