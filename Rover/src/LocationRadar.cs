@@ -15,7 +15,7 @@ namespace Rover
                 {
                     if (s.IsIn(Rover, RADAR_RANGE))
                     {
-						s.IsVisable = true;
+                        s.Isvisible = true;
                     }
                 }
                 base.Use();

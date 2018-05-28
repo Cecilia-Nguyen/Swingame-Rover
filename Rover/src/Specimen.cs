@@ -7,23 +7,23 @@ namespace Rover
 
 		private string _scientist;
 		private bool _isActive;
-		private bool _isVisable;
+		private bool _isvisible;
 
 		public Specimen (string scientist, int x, int y, int size, string name, Environment env) : base (x, y, size, name,env)
 		{
 			_scientist = scientist;
 			_isActive = true;
-			_isVisable = false;
+			_isvisible = false;
 		}
 
 		public override void Draw ()
 		{
-			if (_isActive && _isVisable) 
+			if (_isActive && _isvisible) 
 			{
 				SwinGame.DrawCircle (Color.Green, DrawX, DrawY, Size);
 			} else if (!_isActive)
 			{
-				_isVisable = false;
+				_isvisible = false;
 			}
 		}
 
@@ -36,9 +36,9 @@ namespace Rover
 			set { _isActive = value; }
 		}
 
-		public bool IsVisable {
-			get { return _isVisable; }
-			set { _isVisable = value; }
+		public bool Isvisible {
+			get { return _isvisible; }
+			set { _isvisible = value; }
 		}
 	}
 }
